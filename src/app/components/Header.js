@@ -26,7 +26,7 @@ export default function Headers() {
           </div>
         </div>
         <div>
-          <Image src={side_image} className="h-[60vh] w-[30vw]" />
+          <Image src={side_image} alt="" className="h-[60vh] w-[30vw]" />
         </div>
       </div>
     </div>
