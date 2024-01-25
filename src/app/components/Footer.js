@@ -9,8 +9,8 @@ function Footer() {
   return (
     <div className="flex flex-col bg-[#0c77c9] px-16  py-10">
       <div className="flex flex-col items-center md:flex-row justify-between">
-        <div className="flex flex-col md:flex gap-6 pb-10 md:pb-0">
-          <div className="w-[160px] mb-10 md:mb-0 md:h-[150px] text-white">
+        <div className="flex flex-col md:flex-row gap-6 pb-10 md:pb-0">
+          <div className="w-[160px] md:w-[200px] mb-10 md:mb-0 md:h-[150px] text-white">
             <Image
               src={imgFooter1}
               alt=""

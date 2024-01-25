@@ -23,7 +23,7 @@ function Ecosystem() {
               {ecosystem.title}
             </h3>
             <div className="font-light pb-48">{ecosystem.description}</div>
-            <div className="flex justify-center absolute bottom-0 left-0 right-0">
+            <div className="flex w-[80%] md:w-[100%] m-auto md:m-0 justify-center absolute bottom-0 left-0 right-0">
               <Image src={ecosystem.image} alt="" className="text-center" />
             </div>
           </div>
