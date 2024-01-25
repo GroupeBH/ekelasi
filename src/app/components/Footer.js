@@ -8,24 +8,24 @@ import { FaFacebookSquare } from "react-icons/fa";
 function Footer() {
   return (
     <div className="flex flex-col bg-[#0c77c9] px-16  py-10">
-      <div className="flex items-center justify-between">
-        <div className="flex gap-6 ">
-          <div className="w-[200px] h-[150px] text-white">
+      <div className="flex flex-col items-center md:flex-row justify-between">
+        <div className="flex flex-col md:flex gap-6 pb-10 md:pb-0">
+          <div className="w-[160px] mb-10 md:mb-0 md:h-[150px] text-white">
             <Image
               src={imgFooter1}
               alt=""
-              className="w-[200px] h-[150px] object-contain"
+              className="w-[160px] md:w-[200px] md:h-[150px] object-contain"
             />
           </div>
-          <div className="w-[280px] h-[150px]">
+          <div className="md:w-[280px] md:h-[150px]">
             <Image
               src={imgFooter2}
               alt=""
-              className="w-[280px] h-[150px] object-contain"
+              className="md:w-[280px] md:h-[150px] object-contain"
             />
           </div>
         </div>
-        <div className="text-center ">
+        <div className="text-center pb-10 md:pb-0">
           <h2 className="font-bold underline pb-2">Contactez nous</h2>
           <div className="flex gap-2 justify-center">
             <FaLinkedin className="text-[22px] cursor-pointer" />

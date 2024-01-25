@@ -4,9 +4,9 @@ import Image from "next/image";
 
 function News() {
   return (
-    <div className="bg-[#eeeff3] px-16 py-8">
+    <div className="px-[20px] bg-[#eeeff3] md:px-16 py-8">
       <h2 className="text-center py-7 text-[27px] font-bold">Nouvelles</h2>
-      <div className="flex gap-10 ">
+      <div className=" flex flex-col md:flex-row gap-10 ">
         {news.map((news) => (
           <div
             key={news.id}
