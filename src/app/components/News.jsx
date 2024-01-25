@@ -10,7 +10,7 @@ function News() {
         {news.map((news) => (
           <div
             key={news.id}
-            className="bg-white px-7 py-5 cursor-pointer rounded-[8px] boxshadow hover:boxshadow-hover hover:bg-[rgba(255,255,255,0.7)]"
+            className="bg-white px-7 py-5 cursor-pointer rounded-[8px] shadow-[0_0_0_rgba(48, 48, 49, 0.3)] hover:shadow-[0_0_15px_rgba(20,_20,_20,_0.07)] transition-all ease-in-out delay-150 hover:bg-[rgba(255,255,255,0.7)]"
           >
             <div>
               <div className="text-[15px] text-end text-[rgba(0,0,0,0.82)]">

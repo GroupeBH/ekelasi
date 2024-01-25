@@ -4,7 +4,7 @@ import AAGENDA from "../assets/agenda.png";
 
 export const news = [
   {
-    id: "1",
+    id: 1,
     date: "15 juin 2023",
     title:
       "L’éducation en République Démocratique du Congo se développera grâce aux solutions numériques d’ElJour",
@@ -15,7 +15,7 @@ export const news = [
     image: DRC,
   },
   {
-    id: "2",
+    id: "2023_infotecs",
     date: "15 juin 2023",
     title:
       "L’éducation en République Démocratique du Congo se développera grâce aux solutions numériques d’ElJour",
@@ -26,7 +26,7 @@ export const news = [
     image: INFOTECH,
   },
   {
-    id: "3",
+    id: "2023_sferum_miniapp",
     date: "15 juin 2023",
     title:
       "L’éducation en République Démocratique du Congo se développera grâce aux solutions numériques d’ElJour",
