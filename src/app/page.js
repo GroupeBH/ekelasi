@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "./components/Header";
 import News from "./components/News";
+import Ecosystem from "./components/Ecosystem";
 
 export default function Home() {
   return (
@@ -10,6 +11,9 @@ export default function Home() {
       </main>
       <div>
         <News />
+      </div>
+      <div>
+        <Ecosystem />
       </div>
     </div>
   );
