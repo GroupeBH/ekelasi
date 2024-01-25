@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <div className="w-[100vw] py-20 pt-32 md:px-16 p-5 bg-[#f5f5f5]">
+        <div className=" py-20 pt-32 md:px-16 p-5 bg-[#f5f5f5]">
 
           <div className="flex justify-between items-center w-[100%]">
             <div className="md:w-[50%]">
