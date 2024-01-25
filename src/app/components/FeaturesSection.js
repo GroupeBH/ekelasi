@@ -1,0 +1,49 @@
+import Image from "next/image";
+import side_image from "../assets/header.png"
+
+const sectionData = [
+    {title: 'Organisations éducatives', src: '', paragraph: ['Gestion opérationnelle du processus éducatif', 'Libération de la paperasse', 'Automatisation des tâches courantes', 'Informations complètes sur les activités éducatives', 
+    'Accès sur n’importe quel appareil depuis n’importe où dans le monde']},
+    {title: 'Aux instances dirigeantes', src: '', 
+     paragraph: ['Surveillance des organisations subordonnées', 'Intégration avec les services et ressources gouvernementaux',
+    'Conformité aux exigences gouvernementales en matière de développement et de mise en œuvre']},
+    {title: 'Pour les étudiants et les parents', src: '', paragraph: ['Suivi des progrès et de la fréquentation', 'Contact avec les professeurs',
+    'Notifications et rapports instantanés', 'Calendrier, sujets de cours, devoirs', "Ressources pédagogiques et d'apprentissage en ligne"]}
+]
+
+export default function FeaturesSection() {
+    return (
+        <div className="py-24 bg-white w-[100%] md:px-16 px-5">
+            <div className="flex flex-col w-[100%] gap-2">
+                <h3 className="self-center md:text-2xl text-lg text-center font-medium">Complexe d'information polyvalent</h3>
+                <p className="self-center text-sm text-center">Pour les organismes éducatifs, les instances dirigeantes, les étudiants et les parents.</p>
+            </div>
+            <div className="w-[100%] grid gap-12 pt-10 pr-10">
+                {sectionData.map((i, index) => {
+                    return (
+                        <div key={index} className="flex w-[100%] md:items-center md:flex-row md:justify-between flex-col">
+                            <div className="md:w-[50%] w-[100%]">
+                                <Image src={side_image} className="md:h-[70vh] md:w-[90%] w-[97.5%] h-[35vh]" />
+                            </div>
+                            <div className="md:w-[50%] w-[100%]">
+                                <h5 className="md:text-2xl text-lg font-medium">{i.title}</h5>
+                                <ul>
+                                    {i.paragraph.map((p) => {
+                                        return (
+                                            <li className="flex items-center space-x-3 rtl:space-x-reverse">
+                                                <svg className="flex-shrink-0 w-3.5 h-3.5 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                                </svg>
+                                                <span>{p}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
