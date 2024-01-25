@@ -11,8 +11,8 @@ export default function Headers() {
           <div>
             <p className="text-4xl">Plateforme éducative numérique ekelasi</p>
             <p>
-              Traduction et accompagnement dans l'environnement numérique des
-              processus des organisations éducatives et des instances
+              Traduction et accompagnement dans {"l'environnement"} numérique
+              des processus des organisations éducatives et des instances
               dirigeantes
             </p>
           </div>
@@ -21,7 +21,7 @@ export default function Headers() {
               Entrer
             </button>
             <button className="px-5 py-3 bg-blue-600 rounded-lg text-white">
-              Connecter l'école
+              Connecter {"l'école"}
             </button>
           </div>
         </div>
