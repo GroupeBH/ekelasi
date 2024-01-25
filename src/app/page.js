@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import News from "./components/News";
 import Ecosystem from "./components/Ecosystem";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
       </div>
       <div>
         <Ecosystem />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
