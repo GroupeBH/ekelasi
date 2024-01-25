@@ -16,7 +16,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,10 +24,18 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.boxshadow {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+}
+
+.boxshadow-eco {
+  box-shadow: 0px 0px 25px rgb(215, 231, 255, 0.19);
 }
