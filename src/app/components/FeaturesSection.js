@@ -26,7 +26,7 @@ export default function FeaturesSection() {
                                 <Image src={side_image} alt="" className=" md:h-[50vh] md:w-[90%] w-[97.5%] h-[35vh]" />
                             </div>
                             <div className="md:w-[50%] w-[100%] order-1 md:order-2">
-                                <h5 className="text-[18px] pb-4 md:pb-4 font-bold text-[rgb(0,0,0,0.76)]">{i.title}</h5>
+                                <h5 className="text-[18px] text-center md:text-left pb-4 md:pb-4 font-bold text-[rgb(0,0,0,0.76)]">{i.title}</h5>
                                 <ul>
                                     {i.paragraph.map((p, index) => {
                                         return (
