@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Header() {
     return (
         <div className="h-[100vh] py-20 pt-32 md:px-16 p-5 bg-[#f5f5f5]">
-          <div className="flex justify-between items-center w-[100%]">
-            <div className="md:w-[50%]">
+          <div className="flex flex-col md:flex-row justify-between items-center w-[100%]">
+            <div className="md:w-[50%] order-2 md:order-1">
                 <div className="w-[100%]" data-aos="fade-right" data-aos-delay="100">
                     <p className="md:text-[48px] md:pb-5 font-bold leading-[60px] text-2xl pb-3">Plateforme éducative <br /> numérique <br /> <span className="text-[#3972b7]">e-ke</span><span className="text-[#ce1322]">la</span><span className="text-[#f7d715]">si</span></p>
                     <p className="text-sm md:text-[16px] md:pb-5 text-[rgba(0,0,0,0.7)] font-light">
@@ -23,8 +23,8 @@ export default function Header() {
                     </button>
                 </div>
             </div>
-            <div className="md:block hidden " data-aos="fade-left" data-aos-delay="200">
-                <Image src={side_image} alt="" className="h-[65vh] w-[40vw]" />
+            <div className=" order-1 md:order-2" data-aos="fade-left" data-aos-delay="200">
+                <Image src={side_image} alt="" className="h-[65vh] w-[100vw] md:w-[44vw] object-contain" />
             </div>
           </div>
         </div>
