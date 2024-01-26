@@ -22,8 +22,8 @@ export default function FeaturesSection() {
                 {sectionData.map((i, index) => {
                     return (
                         <div key={index} className="flex w-[100%] md:items-center pb-10 md:pb-7  md:flex-row md:justify-between flex-col">
-                            <div className="md:w-[50%] w-[100%] order-2 pt-8 md:pt-0 md:order-1 " data-aos="fade-left" data-aos-delay="200">
-                                <Image src={side_image} alt="" className=" md:h-[50vh] md:w-[90%] w-[97.5%] h-[35vh]" />
+                            <div className="md:w-[50%] w-[100%] order-2 pt-8 md:pt-0 md:order-1 " data-aos="fade-up" data-aos-delay="200">
+                                <Image src={side_image} alt="" className=" md:h-[50vh] md:w-[90%] w-[97.5%] h-[35vh] object-contain" />
                             </div>
                             <div className="md:w-[50%] w-[100%] order-1 md:order-2">
                                 <h5 className="text-[18px] text-center md:text-left pb-4 md:pb-4 font-bold text-[rgb(0,0,0,0.76)]">{i.title}</h5>
