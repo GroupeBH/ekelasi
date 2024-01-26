@@ -2,12 +2,13 @@
 import logo from "../assets/logo e-kelasi.png"
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
+import Link from "next/link";
 
 const navTags = [
-    {name: "Possibilités", link: "#"},
-    {name: "Ils travaillent avec nous", link: "#"},
-    {name: "Nouvelles", link: "#"},
-    {name: "Contacts", link: "#"}
+    {name: "Possibilités", link: "#features"},
+    {name: "Ils travaillent avec nous", link: "#partner"},
+    {name: "Nouvelles", link: "#news"},
+    {name: "Contacts", link: "#contact"}
 ]
 export default function Nav(){
     return (
@@ -27,8 +28,10 @@ export default function Nav(){
           <Navbar.Collapse>
             {navTags.map((i, index) => {
               return (
-                <div key={index} className="cursor-pointer text-[16px]">
-                  {i.name}
+                <div key={index}>
+                  <Link href={i.link}>
+                    {i.name}
+                  </Link>
                 </div>
               )
             })}

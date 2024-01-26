@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import side_image from "../assets/header.png"
 import Image from "next/image";
 
@@ -13,8 +14,12 @@ export default function Header() {
                     <p className="text-sm md:text-[16px] md:pb-5 text-[rgba(0,0,0,0.7)] font-light">{"Traduction et accompagnement dans l'environnement numérique des processus des organisations éducatives et des instances dirigeantes"}</p>
                 </div>
                 <div className="flex gap-3 text-lg font-medium mt-5">
-                    <button className="px-5 md:py-[6px] md:text-[15px] py-3 bg-[#ce1322] rounded-lg text-white">Entrer</button>
-                    <button className="md:px-5 md:py-[6px] md:text-[15px] py-3 px-1 bg-[#3972b7] rounded-lg text-white">{"Connecter l'école"}</button>
+                    <button className="px-5 md:py-[6px] md:text-[15px] py-3 bg-[#ce1322] rounded-lg text-white">
+                        <Link href='https://e-kelasi.cd/'>Entrer</Link>
+                    </button>
+                    <button className="md:px-5 md:py-[6px] md:text-[15px] py-3 px-1 bg-[#3972b7] rounded-lg text-white">
+                        <Link href='#contact'>{"Connecter l'école"}</Link>
+                    </button>
                 </div>
             </div>
             <div className="md:block hidden">

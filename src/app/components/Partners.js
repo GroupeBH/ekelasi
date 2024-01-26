@@ -5,8 +5,8 @@ const partnersImgs = [numGouv, epstGouv]
 
 export default function Partners() {
     return (
-        <div className=" md:p-16 p-5">
-            <h3 className="text-center md:text-2xl text-xl font-medium">Ils travaillent avec nous</h3>
+        <div className="bg-[#eeeff3] md:p-16 p-5">
+            <h3 className="md:text-[27px] text-center font-bold text-[25px]">Ils travaillent avec nous</h3>
             <div className='flex justify-center items-center gap-10 pt-10'>
                 {partnersImgs.map((i, index) => {
                     return(

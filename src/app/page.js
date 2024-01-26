@@ -14,19 +14,19 @@ export default function Home() {
         <Nav />
         <Header />
       </main>
-      <div>
+      <div id="news">
         <News />
       </div>
-      <div>
+      <div id="features">
         <FeaturesSection />
       </div>
-      <div>
+      <div id="eco">
         <Ecosystem />
       </div>
-      <div>
+      <div id="partner">
         <Partners />
       </div>
-      <div>
+      <div id="contact">
         <Contact />
       </div>
       <div>
