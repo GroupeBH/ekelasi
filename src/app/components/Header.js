@@ -23,7 +23,7 @@ export default function Header() {
                     </button>
                 </div>
             </div>
-            <div className="md:block hidden " data-aos="fade-left" data-aos-delay="500">
+            <div className="md:block hidden " data-aos="fade-left" data-aos-delay="200">
                 <Image src={side_image} alt="" className="h-[65vh] w-[40vw]" />
             </div>
           </div>
