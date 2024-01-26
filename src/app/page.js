@@ -21,7 +21,7 @@ export default function Home() {
         <News />
       </div>
       <div id="features">
-        {/* <FeaturesSection /> */}
+        <FeaturesSection />
       </div>
       <div id="eco">
         <Ecosystem />
