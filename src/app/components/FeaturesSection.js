@@ -13,20 +13,20 @@ const sectionData = [
 
 export default function FeaturesSection() {
     return (
-        <div className="py-24 bg-[#eeeff3] w-[100%] md:px-16 px-5">
-            <div className="flex flex-col w-[100%] gap-2">
+        <div className="flex justify-center flex-col  py-24 bg-[#eeeff3] w-[100%] md:px-16 px-5">
+            <div className="flex flex-col w-[100%] gap-2 pb-3 md:pb-0">
                 <h3 className="self-center md:text-[27px] text-center font-bold text-[25px]">Complexe {"d'information"} polyvalent</h3>
                 <p className="self-center text-[16px] font-light text-center">Pour les organismes éducatifs, les instances dirigeantes, les étudiants et les parents.</p>
             </div>
-            <div className="w-[100%] grid gap-12 pt-10 md:pt-20 pr-10">
+            <div className="w-[100%] grid gap-12 pt-10 md:pt-20">
                 {sectionData.map((i, index) => {
                     return (
-                        <div key={index} className="flex w-[100%] md:items-center md:pb-7 md:flex-row md:justify-between flex-col">
-                            <div className="md:w-[50%] w-[100%] " data-aos="fade-left" data-aos-delay="200">
-                                <Image src={side_image} alt="" className="md:h-[50vh] md:w-[90%] w-[97.5%] h-[35vh]" />
+                        <div key={index} className="flex w-[100%] md:items-center pb-10 md:pb-7  md:flex-row md:justify-between flex-col">
+                            <div className="md:w-[50%] w-[100%] order-2 pt-8 md:pt-0 md:order-1 " data-aos="fade-left" data-aos-delay="200">
+                                <Image src={side_image} alt="" className=" md:h-[50vh] md:w-[90%] w-[97.5%] h-[35vh]" />
                             </div>
-                            <div className="md:w-[50%] w-[100%]">
-                                <h5 className="text-[18px] md:pb-4 font-bold text-[rgb(0,0,0,0.76)]">{i.title}</h5>
+                            <div className="md:w-[50%] w-[100%] order-1 md:order-2">
+                                <h5 className="text-[18px] pb-4 md:pb-4 font-bold text-[rgb(0,0,0,0.76)]">{i.title}</h5>
                                 <ul>
                                     {i.paragraph.map((p, index) => {
                                         return (
