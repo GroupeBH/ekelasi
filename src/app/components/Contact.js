@@ -22,12 +22,12 @@ const contactData = [
 
 export default function Contact(){
     return (
-        <div className="w-[100%] flex flex-col justify-center items-center bg-[#eeeff3]">
+        <div className="w-[100%] flex flex-col justify-center items-center bg-[#eeeff3] md:pt-20 md:pb-20">
             <h3 className="md:text-[27px] text-center font-bold text-[25px]">Contactez-nous</h3>
             <div className="flex gap-10 py-10">
                {contactData.map((i, index) => {
                  return(
-                    <div key={index} className="w-[20vw] bg-white flex flex-col justify-center items-center py-5 rounded-lg">
+                    <div key={index} className="w-[20vw] bg-[rgb(246,247,248)] flex flex-col justify-center items-center py-4 rounded-lg">
                         <div>
                             {i.icon}
                         </div>

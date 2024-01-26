@@ -4,7 +4,7 @@ import { ecosystems } from "../helper/ecosystemes";
 
 function Ecosystem() {
   return (
-    <div className="px-[20px] bg-[#eeeff3] md:px-16">
+    <div className="px-[20px] bg-[#eeeff3] md:pb-16 md:px-16">
       <h2 className="text-center py-6 text-[25px] md:text-[27px] font-bold">
         Écosystème Kelasi
       </h2>
