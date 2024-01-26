@@ -9,7 +9,7 @@ export default function Header() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-center w-[100%]">
             <div className="md:w-[50%] order-2 md:order-1">
                 <div className="w-[100%]" data-aos="fade-right" data-aos-delay="100">
-                    <p className="md:text-[48px] py-5 md:pt-0 md:pb-5 font-bold md:leading-[60px] text-2xl">Plateforme éducative <br /> numérique <br /> <span className="text-[#3972b7]">e-ke</span><span className="text-[#ce1322]">la</span><span className="text-[#f7d715]">si</span></p>
+                    <p className="md:text-[48px] py-5 md:pt-0 md:pb-5 font-bold md:leading-[60px] text-2xl">Plateforme éducative <br /> numérique <br /> <span className="text-[#3972b7]">Ke</span><span className="text-[#ce1322]">la</span><span className="text-[#f7d715]">si</span></p>
                     <p className="text-sm md:text-[16px] leading-6 md:leading-6 md:pb-5 text-[rgba(0,0,0,0.7)] font-light">
                         {"Traduction et accompagnement dans l'environnement numérique des processus des organisations éducatives et des instances dirigeantes"}
                     </p>

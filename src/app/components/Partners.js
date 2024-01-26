@@ -13,10 +13,10 @@ export default function Partners() {
             <h3 className="md:text-[27px] text-center font-bold text-[25px]">Ils travaillent avec nous</h3>
             <div className='flex justify-center items-center gap-10 pt-10'>
                 <div>
-                    <Image alt='' src={imgPatern1} className="h-[15vh] w-[30vw] object-contain" />
+                    <Image alt='' src={imgPatern1} className="w-[200px] md:h-[15vh] md:w-[30vw] object-contain" />
                 </div>
                 <div>
-                    <Image alt='' src={imgPatern2} className="h-[15vh] w-[30vw] object-contain" />
+                    <Image alt='' src={imgPatern2} className="w-[280px] h-[150px] md:h-[15vh] md:w-[30vw] object-contain" />
                 </div>
             </div>
         </div>
