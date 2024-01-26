@@ -5,12 +5,15 @@ import { Navbar } from "flowbite-react";
 import Link from "next/link";
 
 const navTags = [
-    {name: "Possibilités", link: "#features"},
-    {name: "Ils travaillent avec nous", link: "#partner"},
-    {name: "Nouvelles", link: "#news"},
-    {name: "Contacts", link: "#contact"}
+    {name: "Nouvelles", link: "news"},
+    {name: "Possibilités", link: "features"},
+    {name: "Ecosysteme", link: "eco"},
+    {name: "Ils travaillent avec nous", link: "partner"},
+    {name: "Contacts", link: "contact"},
 ]
-export default function Nav(){
+export default function Nav({scrolltoHash}){
+
+ 
     return (
       <div className="fixed top-0 left-0 right-0 z-50 md:px-10 bg-white">
         <Navbar
@@ -29,9 +32,9 @@ export default function Nav(){
             {navTags.map((i, index) => {
               return (
                 <div key={index}>
-                  <Link href={i.link}>
+                  <div onClick={() => scrolltoHash(i.link)}>
                     {i.name}
-                  </Link>
+                  </div>
                 </div>
               )
             })}

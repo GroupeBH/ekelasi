@@ -28,10 +28,10 @@ function News() {
               <div className="py-4">
                 <Image src={news.image} alt="" className="rounded-[8px] " />
               </div>
-              <h3 className="font-bold text-[22px] pb-3 underline text-[rgba(0,0,0,0.76)]">
+              <h3 id="news" className="font-bold text-[22px] pb-3 underline text-[rgba(0,0,0,0.76)]">
                 {news.title}
               </h3>
-              <div className="text-[15px] font-light">{news.description}</div>
+              <div  className="text-[15px] font-light">{news.description}</div>
             </div>
           </div>
         ))}

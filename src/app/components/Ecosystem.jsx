@@ -8,7 +8,7 @@ function Ecosystem() {
       <h2 className="text-center py-6 text-[25px] md:text-[27px] font-bold">
         Écosystème Kelasi
       </h2>
-      <div className="text-center md:w-[62%] m-auto text-[16px] font-light md:leading-7">
+      <div id="eco" className="text-center md:w-[62%] m-auto text-[16px] font-light md:leading-7">
         {
           "ElZhur est une variété de services numériques permettant de résoudre divers problèmes. L'intégration des services dans un espace numérique unique crée un écosystème où chaque élément fait partie intégrante et joue un rôle particulier."
         }
