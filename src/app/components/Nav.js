@@ -19,14 +19,15 @@ export default function Nav(){
           <Navbar.Brand href="#">
             <Image
               src={logo}
-              className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9"
+              alt=""
+              className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9 object-cover"
             />
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
             {navTags.map((i, index) => {
               return (
-                <div className="cursor-pointer">
+                <div key={index} className="cursor-pointer text-[16px]">
                   {i.name}
                 </div>
               )
