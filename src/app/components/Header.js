@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <div className="h-[100vh] py-20 pt-32 md:px-16 p-5 bg-[#f5f5f5]">
+        <div className="h-[100vh] py-20 pt-30 md:px-16 p-5 bg-[#f5f5f5]">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center w-[100%]">
             <div className="md:w-[50%] order-2 md:order-1">
                 <div className="w-[100%]" data-aos="fade-right" data-aos-delay="100">
@@ -23,7 +23,7 @@ export default function Header() {
                     </button>
                 </div>
             </div>
-            <div className=" order-1 md:order-2 pb-3 md:pb-0" data-aos="fade-left" data-aos-delay="200">
+            <div className=" order-1 md:order-2 pb-1 md:pb-0" data-aos="fade-left" data-aos-delay="200">
                 <Image src={side_image} alt="" className="md:h-[65vh] md:w-[44vw] object-contain" />
             </div>
           </div>
