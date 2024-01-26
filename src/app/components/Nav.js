@@ -1,8 +1,8 @@
 'use client'
+import {useState} from 'react'
 import logo from "../assets/logo e-kelasi.png"
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
-import Link from "next/link";
 
 const navTags = [
     {name: "Nouvelles", link: "news"},
@@ -12,7 +12,7 @@ const navTags = [
     {name: "Contacts", link: "contact"},
 ]
 export default function Nav({scrolltoHash}){
-
+    const [active, setActive] = useState('')
  
     return (
       <div className="fixed top-0 left-0 right-0 z-50 md:px-10 bg-white">
@@ -32,7 +32,13 @@ export default function Nav({scrolltoHash}){
             {navTags.map((i, index) => {
               return (
                 <div key={index}>
-                  <div className=" cursor-pointer" onClick={() => scrolltoHash(i.link)}>
+                  <div
+                    className={`cursor-pointer ${active === i.name ? 'text-[#3b71b9]' : ''}`}
+                    onClick={() => {
+                      setActive(`${i.name}`)
+                      scrolltoHash(i.link)
+                    }}
+                  >
                     {i.name}
                   </div>
                 </div>
