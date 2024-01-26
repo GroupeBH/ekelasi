@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "./components/Header";
 import News from "./components/News";
 import Ecosystem from "./components/Ecosystem";
@@ -7,26 +7,36 @@ import FeaturesSection from "./components/FeaturesSection";
 import Nav from "./components/Nav";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
+import { useState } from "react";
 // ..
 
 export default function Home() {
-  
+
+  const scrolltoHash = function (linkNav) {
+    const element = document.getElementById(linkNav);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
+
   return (
     <div>
       <main className="">
-        <Nav />
+        <Nav scrolltoHash={scrolltoHash} />
         <Header />
       </main>
-      <div id="news">
+      <div >
         <News />
       </div>
-      <div id="features">
+      <div >
         <FeaturesSection />
       </div>
-      <div id="eco">
+      <div>
         <Ecosystem />
       </div>
-      <div id="partner">
+      <div>
         <Partners />
       </div>
       <div id="contact">

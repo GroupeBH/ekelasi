@@ -32,10 +32,10 @@ export default function Contact(){
                             {i.icon}
                         </div>
                         <div className="font-medium">{i.title}</div>
-                        <div className="grid">
+                        <div className="grid" >
                           {i.value.map((e, index) => {
                             return(
-                              <span key={index} className="font-light text-center text-[15px]">{e}</span>
+                              <span  key={index} className="font-light text-center text-[15px]">{e}</span>
                             )
                           })}
                         </div>
