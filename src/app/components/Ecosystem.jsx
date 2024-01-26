@@ -16,6 +16,7 @@ function Ecosystem() {
       <div className="grid md:grid-cols-2 gap-9 md:px-10 py-16 ">
         {ecosystems.map((ecosystem) => (
           <div
+            id="eco"
             key={ecosystem.id}
             className="bg-[#d7e7ff] relative px-8 rounded-[10px] boxshadow-eco"
           >
