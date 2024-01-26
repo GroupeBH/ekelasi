@@ -9,16 +9,16 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '300px',
+      sm: "300px",
       // => @media (min-width: 640px) { ... }
 
-      md: '768px',
+      md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      lg: '1024px',
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      xl: '1280px',
+      xl: "1280px",
       // => @media (min-width: 1280px) { ... }
     },
     extend: {
@@ -27,9 +27,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
-  plugins: [
-    require("flowbite/plugin")
-  ],
+  plugins: [require("flowbite/plugin")],
 };
