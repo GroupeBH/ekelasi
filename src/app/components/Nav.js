@@ -32,7 +32,7 @@ export default function Nav({scrolltoHash}){
             {navTags.map((i, index) => {
               return (
                 <div key={index}>
-                  <div onClick={() => scrolltoHash(i.link)}>
+                  <div className=" cursor-pointer" onClick={() => scrolltoHash(i.link)}>
                     {i.name}
                   </div>
                 </div>
