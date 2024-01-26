@@ -12,7 +12,7 @@ const navTags = [
 ]
 export default function Nav(){
     return (
-      <div className="fixed top-0 left-0 right-0 z-50 px-10 bg-white">
+      <div className="fixed top-0 left-0 right-0 z-50 md:px-10 bg-white">
         <Navbar
           fluid={true}
           rounded={true}
