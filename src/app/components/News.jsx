@@ -1,12 +1,21 @@
 import React from "react";
 import { news } from "../helper/news";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import { useEffect } from "react";
+
 
 function News() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="px-[20px] bg-[#eeeff3] md:px-16 py-8">
-      <h2 className="text-center py-7 text-[25px] md:text-[27px] font-bold">Nouvelles</h2>
-      <div className=" flex flex-col md:flex-row gap-10 ">
+      <h2 className="text-center py-7 text-[25px] md:text-[27px] font-bold" >Nouvelles</h2>
+      <div className=" flex flex-col md:flex-row gap-10" data-aos="fade-up" data-aos-delay="100">
         {news.map((news) => (
           <div
             key={news.id}

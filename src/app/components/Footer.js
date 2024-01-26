@@ -26,7 +26,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-center pb-10 md:pb-0">
-          <h2 className="font-bold underline pb-2">Contactez nous</h2>
+          <h2 className="font-bold underline pb-2">Contactez-nous</h2>
           <div className="flex gap-2 justify-center">
             <FaLinkedin className="text-[22px] cursor-pointer" />
             <FaFacebookSquare className="text-[22px] cursor-pointer" />
