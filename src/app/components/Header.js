@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <div className="flex flex-col justify-center h-[100vh] md:py-20 md:mt-12 md:px-16 p-5  bg-[#f5f5f5]">
+        <div id="home" className="flex flex-col justify-center h-[100vh] md:py-20 md:mt-12 md:px-16 p-5  bg-[#f5f5f5]">
           <div className=" md:h-auto flex flex-col md:flex-row md:justify-between md:items-center w-[100%]">
             <div className="md:w-[50%] order-2 md:order-1">
                 <div className="w-[100%]" data-aos="fade-right" data-aos-delay="100">
