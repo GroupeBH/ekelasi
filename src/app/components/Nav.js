@@ -40,7 +40,7 @@ export default function Nav({scrolltoHash}){
                 return (
                   <div key={index}>
                     <div
-                      className={`cursor-pointer px-1 md:bg-white  py-1 md:px-0 md:py-0  ${active === i.name ? 'bg-[#3b71b9] text-white md:bg-white  md:text-[#3b71b9]' : ''}`}
+                      className={`cursor-pointer text-[16px] px-1 md:bg-white  py-1 md:px-0 md:py-0  ${active === i.name ? 'bg-[#3b71b9] text-white md:bg-white  md:text-[#3b71b9]' : ''}`}
                       onClick={() => handleOnClik(i)}
                     >
                       {i.name}
