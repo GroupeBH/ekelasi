@@ -6,7 +6,7 @@ import Image from "next/image";
 function page() {
   return (
     <div className=" flex h-[100vh] justify-center items-center flex-col">
-      <div className="flex flex-col gap-4 justify-center items-center gradiant w-[450px] h-[460px] ">
+      <div className="flex flex-col gap-2 justify-center items-center gradiant w-[450px] h-[510px] ">
         <div>
             <Image alt="" src={logo} className="w-[110px] object-cover" />
         </div>
