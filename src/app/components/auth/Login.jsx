@@ -16,6 +16,7 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault()
+        
         !identify ? setErrorIdentify("error identify") : setErrorIdentify(null)
         
         !password ? setErrorPassword("error password") : setErrorPassword(null)
@@ -25,7 +26,7 @@ function Login() {
             localStorage.setItem('password', password);
             console.log(identify);
             console.log(password);
-            router.push('/')
+            router.push('/admin')
         }
     }
 
