@@ -2,8 +2,11 @@
 import React, { useState } from 'react'
 import logo from "../../assets/logo e-kelasi.png"
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
+
 
 function Login() {
+    const router = useRouter()
 
     const [identify, setIdentify] = useState(null)
     const [password, setPassword] = useState(null)
@@ -18,8 +21,11 @@ function Login() {
         !password ? setErrorPassword("error password") : setErrorPassword(null)
         
         if(identify && password) {
+            localStorage.setItem('identify', identify);
+            localStorage.setItem('password', password);
             console.log(identify);
             console.log(password);
+            router.push('/')
         }
     }
 
