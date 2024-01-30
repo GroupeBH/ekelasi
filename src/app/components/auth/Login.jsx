@@ -24,8 +24,6 @@ function Login() {
         if(identify && password) {
             localStorage.setItem('identify', identify);
             localStorage.setItem('password', password);
-            console.log(identify);
-            console.log(password);
             router.push('/admin')
         }
     }
