@@ -15,6 +15,12 @@ function Login() {
     const [errorIdentify, setErrorIdentify] = useState(null)
     const [errorPassword, setErrorPassword] = useState(null)
 
+    if (typeof window !== 'undefined') {
+        const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+        console.log("currentAdmin : ", currentAdmin)
+        currentAdmin && router.push('/admin')
+    }
+
     const handleLogin =async (e) => {
         e.preventDefault()
         
@@ -26,7 +32,7 @@ function Login() {
             const user = await axios.post("http://localhost:8002/api/auth/login", { identify, password })
             console.log("user : ", user)
             if(user.data.message === "success") {
-                localStorage.setItem('cureentAdmin', JSON.stringify(user.data.user));
+                localStorage.setItem('currentAdmin', JSON.stringify(user.data.user));
                 router.push('/admin')
             }
         }

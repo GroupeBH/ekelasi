@@ -17,6 +17,7 @@ function Admin() {
 
   if (typeof window !== 'undefined') {
       const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+      console.log("currentAdmin : ", currentAdmin)
       !currentAdmin && router.push('/auth')
   }
 
