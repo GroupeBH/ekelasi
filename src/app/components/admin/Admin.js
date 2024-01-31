@@ -1,8 +1,11 @@
 "use client"
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from "next/image";
 import logo from "../../assets/logo e-kelasi.png"
+import axios from "axios"
+
 
 
 
@@ -15,20 +18,24 @@ function Admin() {
   const [errDescription, setErrDescription] = useState(null)
 
 
-  if (typeof window !== 'undefined') {
-      const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
-      console.log("currentAdmin : ", currentAdmin)
-      !currentAdmin && router.push('/auth')
-  }
+  const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+  useEffect(() => {
+    !currentAdmin && router.push('/auth')
+  },[router, currentAdmin]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
     !title ? setErrTitle('get title') : setErrTitle(null)
     !description ? setErrDescription('get description') : setErrDescription(null)
 
     if(title && description) {
-      console.log('title', title)
-      console.log('desc', description)
+
+      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description })
+      console.log("news : ", news)
+      if(news.data.message === "success") {
+          console.log("news : ", news)
+      }
+      
     }
   }
 
