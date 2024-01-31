@@ -17,6 +17,7 @@ function Admin() {
   const [description, setDescription] = useState(null)
   const [errTilte, setErrTitle] = useState(null)
   const [errDescription, setErrDescription] = useState(null)
+  const [successPublish, setSuccessPublish] = useState(false)
 
 
   const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
@@ -24,22 +25,27 @@ function Admin() {
     !currentAdmin && router.push('/auth')
   },[router, currentAdmin]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setSuccessPublish(false)
+    },1000)
+  },[])
+
   const handleSubmit = async(e) => {
     e.preventDefault()
     !title ? setErrTitle('get title') : setErrTitle(null)
     !description ? setErrDescription('get description') : setErrDescription(null)
+    setSuccessPublish(false)
 
     if(title && description) {
 
       const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description })
       console.log("news : ", news)
       if(news.data.message === "success") {
-          console.log("news : ", news)
+        setTitle(null)
+        setDescription(null)
+        router.push('/news')
       }
-
-      setTitle("")
-      setDescription("")
-      
     }
   }
 
@@ -76,7 +82,11 @@ function Admin() {
                 <input type="submit" className="text-white w-[100%] border-[1px] outline-none rounded-[4px] text-[18px] bg-[rgba(206,19,34,0.78)] cursor-pointer py-[7px]" value="Publier" />
             </div>
         </form>
+        {
+        successPublish && <div className='text-green-600'>Publication reussie avec success</div>
+      }
       </div>
+     
     </div>
   )
 }
