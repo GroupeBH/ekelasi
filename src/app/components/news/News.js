@@ -28,12 +28,12 @@ function AllNews() {
         <div className="px-[20px] bg-[#eeeff3] md:px-16 py-8">
             {
                 currentAdmin ? 
-                <div className='flex justify-between items-center bg-[#eeeff3] px-16 fixed top-0 left-0 right-0'>
+                <div className='flex bg-white justify-between items-center px-16 fixed top-0 left-0 right-0'>
                    <Link href={"/"}>
                         <div> <Image src={logo} alt='' className='w-[130px]' /></div>
                    </Link>
                    <Link href={"/admin"}>
-                        <div className='pt-2 cursor-pointer text-[17px] text-[#3972b7] underline'>Cliquez ici pour publier</div>
+                        <div className='pt-2 cursor-pointer font-medium text-[16px] hover:text-[#3972b7]'>Cliquez ici pour publier</div>
                    </Link>
                 </div>  : 
                     <div className='pt-[60px]'><Nav /></div>
