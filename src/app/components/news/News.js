@@ -5,10 +5,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from "../../assets/logo e-kelasi.png"
 import Nav from '../Nav'
+import { useRouter } from 'next/navigation'
 
 
 
 function AllNews() {
+
+    const router = useRouter()
+
     const [news, setNews] = useState([])
     const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
 
@@ -48,7 +52,9 @@ function AllNews() {
             <div className="h-auto grid grid-cols-3 gap-5 " data-aos="fade-up" data-aos-delay="100">
                 {news.map((news) => (
                 <div
-                    key={news.id}
+                onClick={() => router.push(`news/${news._id}`)}
+
+                    key={news._id}
                     className="bg-white px-7 h-auto py-5 cursor-pointer rounded-[8px] shadow-[0_0_0_rgba(48, 48, 49, 0.3)] hover:shadow-[0_0_15px_rgba(20,_20,_20,_0.07)] transition-all ease-in-out delay-150 hover:bg-[rgba(255,255,255,0.7)]"
                 >
                     <div>
