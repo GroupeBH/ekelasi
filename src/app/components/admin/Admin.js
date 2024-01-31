@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Image from "next/image";
 import logo from "../../assets/logo e-kelasi.png"
 import axios from "axios"
+import Link from 'next/link';
 
 
 
@@ -35,6 +36,9 @@ function Admin() {
       if(news.data.message === "success") {
           console.log("news : ", news)
       }
+
+      setTitle("")
+      setDescription("")
       
     }
   }
@@ -46,6 +50,14 @@ function Admin() {
                 <Image alt="" src={logo} className="w-[120px] object-cover" />
           </div>
           <div className='px-4 text-center text-[18px] font-light'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
+          <div className='flex gap-3 pt-4 text-[17px] '>
+            <Link href={"/"}>
+              <div className='text-[#3972b7] underline hover:no-underline cursor-pointer'>Acueil</div>
+            </Link>
+            <Link href={"/news"}>
+              <div className='text-[#3972b7] underline hover:no-underline cursor-pointer'>Nouvelles</div>
+            </Link>
+          </div>
       </div>
       <div className='flex flex-col justify-center items-center w-[70%] h-[100vh] border-[rgba(0,0,0,0.087)] border-l-[1px]'>
         <div className='w-[65%]'>
