@@ -1,7 +1,8 @@
 import React from "react";
+import AllNews from "../components/news/News";
 
 function Page() {
-  return <div>news</div>;
+  return <AllNews />
 }
 
 export default Page;
