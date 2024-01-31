@@ -15,12 +15,12 @@ export default function Header() {
                     </p>
                 </div>
                 <div className="flex gap-3 text-lg font-medium mt-5" >
-                    <button className="px-5 py-[4px] md:py-[4px] md:text-[15px] bg-[#ce1322] rounded-[4px] text-white">
-                        <Link href='https://e-kelasi.cd/'>Entrer</Link>
+                    <button className="px-5 py-[4px] md:py-[4px] md:text-[15px] bg-[#3972b7] rounded-[4px] text-white">
+                        <Link href='https://e-kelasi.cd/'>Commencer</Link>
                     </button>
-                    <button className="px-5 md:px-5 py-[4px] md:py-[4px] md:text-[15px] bg-[#3972b7] rounded-[4px] text-white">
+                    {/* <button className="px-5 md:px-5 py-[4px] md:py-[4px] md:text-[15px] bg-[#3972b7] rounded-[4px] text-white">
                         <Link href='#contact'>{"Connecter l'école"}</Link>
-                    </button>
+                    </button> */}
                 </div>
             </div>
             <div className=" order-1 md:order-2 md:pt-0 pb-1 md:pb-0" data-aos="fade-left" data-aos-delay="100">
