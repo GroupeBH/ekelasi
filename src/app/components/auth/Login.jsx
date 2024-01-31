@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import logo from "../../assets/logo e-kelasi.png"
 import Image from "next/image";
 import { useRouter } from 'next/navigation'
+import axios from "axios"
 
 
 function Login() {
@@ -14,7 +15,7 @@ function Login() {
     const [errorIdentify, setErrorIdentify] = useState(null)
     const [errorPassword, setErrorPassword] = useState(null)
 
-    const handleLogin = (e) => {
+    const handleLogin =async (e) => {
         e.preventDefault()
         
         !identify ? setErrorIdentify("error identify") : setErrorIdentify(null)
@@ -22,9 +23,12 @@ function Login() {
         !password ? setErrorPassword("error password") : setErrorPassword(null)
         
         if(identify && password) {
-            localStorage.setItem('identify', identify);
-            localStorage.setItem('password', password);
-            router.push('/admin')
+            const user = await axios.post("http://localhost:8002/api/auth/login", { identify, password })
+            console.log("user : ", user)
+            if(user.data.message === "success") {
+                localStorage.setItem('cureentAdmin', JSON.stringify(user.data.user));
+                router.push('/admin')
+            }
         }
     }
 

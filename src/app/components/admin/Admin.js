@@ -16,12 +16,8 @@ function Admin() {
 
 
   if (typeof window !== 'undefined') {
-      const identify = localStorage.getItem('identify')
-      const password = localStorage.getItem('password')
-
-      if(!identify && !password) {
-          router.push('/auth')
-      }
+      const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+      !currentAdmin && router.push('/auth')
   }
 
   const handleSubmit = (e) => {
