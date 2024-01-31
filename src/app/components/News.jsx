@@ -4,6 +4,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect } from "react";
+import Link from "next/link";
 
 
 function News() {
@@ -36,6 +37,9 @@ function News() {
           </div>
         ))}
       </div>
+     <Link href={"/news"}>
+        <div className="text-center pt-6 underline cursor-pointer">Voir plus</div>
+     </Link>
     </div>
   );
 }
