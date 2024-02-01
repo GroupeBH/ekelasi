@@ -17,15 +17,14 @@ function Detail() {
 
     const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
 
+    useEffect(() => {
     const getNews = async() => {
         const data = await axios.get(`http://localhost:8002/api/get-news/${params?.id}`)
         console.log("news : ", data.data.news)
         setNews(data.data.news)
-      }
-    
-      useEffect(() => {
+        }
         getNews()
-      },[])
+    },[params?.id])
 
 
   return (
