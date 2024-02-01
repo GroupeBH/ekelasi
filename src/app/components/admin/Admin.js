@@ -6,6 +6,7 @@ import Image from "next/image";
 import logo from "../../assets/logo e-kelasi.png"
 import axios from "axios"
 import Link from 'next/link';
+import { cloudinary } from '@/app/services/cloudinary';
 
 
 
@@ -18,6 +19,8 @@ function Admin() {
   const [errTilte, setErrTitle] = useState(null)
   const [errDescription, setErrDescription] = useState(null)
   const [successPublish, setSuccessPublish] = useState(false)
+  const [photo, setPhoto] = useState(null)
+  const [image, setImage] = useState(null)
 
 
   const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
@@ -31,15 +34,35 @@ function Admin() {
     },1000)
   },[])
 
+  const selectFilesHandler = (e) => {
+    setPhoto(e.target.files[0])
+  }
+
+  //Use cloudinary
+  let fromData = new FormData()
+  fromData.append('file', photo)
+  fromData.append('upload_preset', 'yp1zbtgx')
+    
+
   const handleSubmit = async(e) => {
     e.preventDefault()
     !title ? setErrTitle('get title') : setErrTitle(null)
     !description ? setErrDescription('get description') : setErrDescription(null)
     setSuccessPublish(false)
 
-    if(title && description) {
+    if(title && description && photo) {
 
-      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description })
+      await cloudinary(fromData)
+        .then((res) => {
+          setImage(res.data.secure_url)
+          console.log("res.data.secure_url : ", res.data.secure_url)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+
+
+      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
       console.log("news : ", news)
       if(news.data.message === "success") {
         setTitle(null)
@@ -48,6 +71,12 @@ function Admin() {
       }
     }
   }
+
+
+
+  console.log("image : ", photo)
+
+
 
   return (
     <div className='flex'>
@@ -76,6 +105,9 @@ function Admin() {
             {errTilte && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errTilte}</p>}
             <div className='pt-4'>
                 <textarea rows="5" placeholder='Description' className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" onChange={(e) => setDescription(e.target.value)}></textarea>
+            </div>
+            <div className="pt-5">
+              <input onChange={selectFilesHandler} type="file" accept="image/*" className="" />
             </div>
             {errDescription && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errDescription}</p>}
             <div className="pt-5">
