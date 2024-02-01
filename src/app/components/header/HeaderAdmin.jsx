@@ -14,7 +14,10 @@ function HeaderAdmin() {
               />
           </Link>
         </div>
-        <div className='flex gap-3'>
+        <div className='flex gap-7'>
+        <Link href={"/"}>
+              <div className='pt-1 cursor-pointer font-medium text-[16px] hover:text-[#3b71b9]'>Accueil</div>
+          </Link>
           <Link href={"/news"}>
               <div className='pt-1 cursor-pointer font-medium text-[16px] hover:text-[#3b71b9]'>Nouvelles</div>
           </Link>

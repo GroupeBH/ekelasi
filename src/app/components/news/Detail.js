@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../header/HeaderAdmin'
-import Header from '../Header'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import axios from "axios"
 import { Footer } from 'flowbite-react'
 import Moment from 'react-moment';
 import 'moment-timezone';
+import Nav from '../Nav'
 
 function Detail() {
 
@@ -31,7 +31,7 @@ function Detail() {
     <div className='py-[100px] bg-[#eeeff3]'>
         <div className='bg-white mx-[20px] p-[20px] md:mx-16 md:p-16'>
             <div>
-                { currentAdmin ? <HeaderAdmin /> : <Header /> }
+                { currentAdmin ? <HeaderAdmin /> : <Nav /> }
             </div>
             <div className=''>
                 <div> <Image src={news?.image} width={50} height={50} alt='' className='w-[100%] h-[300px] md:w-[400px] md:h-[400px] object-center object-cover' /> </div>

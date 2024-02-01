@@ -9,7 +9,7 @@ const navTags = [
     {name: "Nouvelles", link: "news"},
     {name: "Possibilités", link: "features"},
     {name: "Ecosystème", link: "eco"},
-    {name: "Ils travaillent avec nous", link: "partner"},
+    {name: "Collaborateurs", link: "partner"},
     {name: "Contacts", link: "contact"},
 ]
 export default function Nav({scrolltoHash}){
