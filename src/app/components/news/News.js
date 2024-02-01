@@ -18,7 +18,7 @@ function AllNews() {
 
       const getNews = async() => {
         const data = await axios.get("http://localhost:8002/api/get-news/")
-        console.log("news : ", data.data.news)
+        console.log("news : ", data.data.news.reverse())
         setNews(data.data.news)
       }
     
@@ -52,7 +52,7 @@ function AllNews() {
                             {news.title}
                         </h3>
                         <div  className="text-[15px] font-light max-w-[300px] overflow-hidden whitespace-nowrap text-ellipsis">{news.description}</div>
-                        <div className='text-end font-medium italic pt-[25px]'>
+                        <div className='text-end text-[14px] font-medium italic pt-[25px]'>
                             <Moment date={news?.createdAt} format="DD-MM-YYYY HH:mm" />
                         </div>
                     </div>
