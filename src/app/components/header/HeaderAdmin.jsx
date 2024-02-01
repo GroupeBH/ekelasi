@@ -6,7 +6,7 @@ import logo from "../../assets/logo e-kelasi.png"
 
 function HeaderAdmin() {
   return (
-    <div className='flex py-4 bg-white justify-between items-center px-16 fixed top-0 left-0 right-0'>
+    <div className='flex py-4 bg-white justify-between items-center px-[16px] md:px-16 fixed top-0 left-0 right-0'>
         <Link href={"/"}>
             <Image
                 src={logo} alt="" className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9 object-cover"

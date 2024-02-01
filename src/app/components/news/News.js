@@ -31,7 +31,7 @@ function AllNews() {
                 currentAdmin ? <HeaderAdmin />  : <div className='pt-[60px]'><Nav /></div>
             }
             <h2 className="text-center pb-7 pt-20 text-[25px] md:text-[27px] font-bold" >Nouvelles</h2>
-            <div className="h-auto grid grid-cols-3 gap-5 " data-aos="fade-up" data-aos-delay="100">
+            <div className="h-auto grid md:grid-cols-3 gap-5 " data-aos="fade-up" data-aos-delay="100">
                 {news.map((news) => (
                 <div
                 onClick={() => router.push(`news/${news._id}`)}
