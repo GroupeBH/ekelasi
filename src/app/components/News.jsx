@@ -38,7 +38,7 @@ function News() {
         ))}
       </div>
      <Link href={"/news"}>
-        <div className="text-center pt-6 underline cursor-pointer">Voir plus</div>
+        {/* <div className="text-center pt-6 underline cursor-pointer">Voir plus</div> */}
      </Link>
     </div>
   );
