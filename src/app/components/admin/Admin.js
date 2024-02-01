@@ -20,7 +20,6 @@ function Admin() {
   const [errDescription, setErrDescription] = useState(null)
   const [successPublish, setSuccessPublish] = useState(false)
   const [photo, setPhoto] = useState(null)
-  const [image, setImage] = useState(null)
 
 
   const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
@@ -35,13 +34,15 @@ function Admin() {
   },[])
 
   const selectFilesHandler = (e) => {
+    console.log("target image : ", e.target.files[0])
     setPhoto(e.target.files[0])
   }
 
   //Use cloudinary
-  let fromData = new FormData()
-  fromData.append('file', photo)
-  fromData.append('upload_preset', 'yp1zbtgx')
+  let formData = new FormData()
+  formData.append('file', photo)
+  formData.append('upload_preset', 'yp1zbtgx')
+  formData.append('quality', 'auto:best');
     
 
   const handleSubmit = async(e) => {
@@ -50,18 +51,20 @@ function Admin() {
     !description ? setErrDescription('get description') : setErrDescription(null)
     setSuccessPublish(false)
 
-    if(title && description && photo) {
+    let image = null
 
-      await cloudinary(fromData)
+    if(photo) {
+      await cloudinary(formData)
         .then((res) => {
-          setImage(res.data.secure_url)
+          image = res.data.secure_url
           console.log("res.data.secure_url : ", res.data.secure_url)
         })
         .catch((err) => {
           console.log(err)
         })
+    }
 
-
+    if(title && description && image) {
       const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
       console.log("news : ", news)
       if(news.data.message === "success") {
@@ -74,7 +77,7 @@ function Admin() {
 
 
 
-  console.log("image : ", photo)
+  console.log("photo : ", photo)
 
 
 

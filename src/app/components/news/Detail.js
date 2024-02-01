@@ -8,6 +8,8 @@ import logo from "../../assets/agenda.png"
 import { useParams } from 'next/navigation'
 import axios from "axios"
 import { Footer } from 'flowbite-react'
+import Moment from 'react-moment';
+import moment from 'moment';
 
 function Detail() {
 
@@ -34,9 +36,12 @@ function Detail() {
                 { currentAdmin ? <HeaderAdmin /> : <Header /> }
             </div>
             <div className=''>
-                <div> <Image src={logo} alt='' className='w-[600px] h-[400px] object-cover' /> </div>
+                <div> <Image src={news?.image} width={50} height={50} alt='' className='w-[400px] h-[400px] object-center object-cover' /> </div>
                 <div className='text-[45px] py-6 font-bold'>{news?.title}</div>
                 <div className='text-[18px]'>{news?.description}</div>
+                <div className='text-end font-medium italic pt-[80px]'>
+                    <Moment date={news?.createdAt} format="DD-MM-YYYY HH:mm" />
+                </div>
             </div>
             <div>
                 { currentAdmin ? '': <Footer /> }
