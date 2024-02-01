@@ -20,6 +20,7 @@ function Admin() {
   const [errDescription, setErrDescription] = useState(null)
   const [successPublish, setSuccessPublish] = useState(false)
   const [photo, setPhoto] = useState(null)
+  const [loader, setLoader] = useState(false)
 
 
   const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
@@ -50,6 +51,7 @@ function Admin() {
     !title ? setErrTitle('get title') : setErrTitle(null)
     !description ? setErrDescription('get description') : setErrDescription(null)
     setSuccessPublish(false)
+    setLoader(true)
 
     let image = null
 
@@ -67,19 +69,19 @@ function Admin() {
     if(title && description && image) {
       const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
       console.log("news : ", news)
-      if(news.data.message === "success") {
-        setTitle(null)
-        setDescription(null)
-        router.push('/news')
+      try{
+        if(news.data.message === "success") {
+          setTitle(null)
+          setDescription(null)
+          router.push('/news')
+        }
+      }
+      catch(err) {
+        console.log(err)
+        setLoader(false)
       }
     }
   }
-
-
-
-  console.log("photo : ", photo)
-
-
 
   return (
     <div className='flex flex-col md:flex-row'>
@@ -114,7 +116,12 @@ function Admin() {
             </div>
             {errDescription && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errDescription}</p>}
             <div className="pt-5">
-                <input type="submit" className="text-white w-[100%] border-[1px] outline-none rounded-[4px] text-[18px] bg-[rgba(206,19,34,0.78)] cursor-pointer py-[7px]" value="Publier" />
+              {
+                !loader ? 
+                <input type="submit" className="text-white w-[100%] border-[1px] outline-none rounded-[4px] text-[18px] bg-[rgba(206,19,34,0.78)] cursor-pointer py-[7px]" value="Publier" /> : 
+                <input type="submit" className="text-white w-[100%] border-[1px] outline-none rounded-[4px] text-[18px] bg-[rgba(206,19,34,0.78)] cursor-pointer py-[7px]" value="Publication en cours..." />
+
+              }
             </div>
         </form>
         {
