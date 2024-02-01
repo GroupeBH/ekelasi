@@ -87,7 +87,9 @@ function Admin() {
     <div className='flex flex-col md:flex-row'>
       <div className=' flex flex-col  items-center md:justify-center md:w-[30%] md:h-[100vh]'>
           <div>
-                <Image alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
+              <Link href={"/"}>
+                  <Image alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
+              </Link>
           </div>
           <div className='px-[20px] pt-4 pb-2 text-center text-[18px] font-light md:pt-0 md:pb-0 md:py-0 md:px-4'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
           <div className='flex text-[17px] gap-3 pt-2 md:pt-4 '>
