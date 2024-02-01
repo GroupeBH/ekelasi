@@ -10,7 +10,7 @@ function HeaderAdmin() {
         <div>
           <Link href={"/"}>
               <Image
-                  src={logo} alt="" className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9 object-cover"
+                  src={logo} alt="" className="mr-3 w-[100px] object-cover"
               />
           </Link>
         </div>
