@@ -4,12 +4,11 @@ import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../header/HeaderAdmin'
 import Header from '../Header'
 import Image from 'next/image'
-import logo from "../../assets/agenda.png"
 import { useParams } from 'next/navigation'
 import axios from "axios"
 import { Footer } from 'flowbite-react'
 import Moment from 'react-moment';
-import moment from 'moment';
+import 'moment-timezone';
 
 function Detail() {
 
