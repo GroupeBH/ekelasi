@@ -31,7 +31,7 @@ export default function Nav({scrolltoHash}){
             <Image
               src={logo}
               alt=""
-              className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9 object-cover"
+              className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-10 object-cover"
             />
           </Navbar.Brand>
           <Navbar.Toggle />
