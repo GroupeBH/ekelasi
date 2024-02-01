@@ -82,13 +82,13 @@ function Admin() {
 
 
   return (
-    <div className='flex'>
-      <div className='w-[30%] h-[100vh] flex flex-col justify-center items-center'>
+    <div className='flex flex-col md:flex-row'>
+      <div className=' flex flex-col  items-center md:justify-center md:w-[30%] md:h-[100vh]'>
           <div>
-                <Image alt="" src={logo} className="w-[120px] object-cover" />
+                <Image alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
           </div>
-          <div className='px-4 text-center text-[18px] font-light'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
-          <div className='flex gap-3 pt-4 text-[17px] '>
+          <div className='px-[20px] pt-4 pb-2 text-center text-[18px] font-light md:pt-0 md:pb-0 md:py-0 md:px-4'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
+          <div className='flex text-[17px] gap-3 pt-2 md:pt-4 '>
             <Link href={"/"}>
               <div className='text-[#3972b7] underline hover:no-underline cursor-pointer'>Acueil</div>
             </Link>
@@ -97,11 +97,11 @@ function Admin() {
             </Link>
           </div>
       </div>
-      <div className='flex flex-col justify-center items-center w-[70%] h-[100vh] border-[rgba(0,0,0,0.087)] border-l-[1px]'>
-        <div className='w-[65%]'>
-          <h2 className='mr-auto text-[25px] mb-3 font-bold'>Formulaire de news</h2>
+      <div className='flex flex-col justify-center items-center border-[rgba(0,0,0,0.087)] border-l-[1px] h-auto w-[100%]  md:w-[70%] md:h-[100vh]'>
+        <div className='pt-5 pb-2 w-[100%] md:pb-0 md:pt-0 md:w-[65%]'>
+          <h2 className='px-[21px] text-20px md:text-[25px] font-bold md:mr-auto md:mb-3'>Formulaire d'annonce</h2>
         </div>
-        <form className="flex  flex-col w-[65%]" onSubmit={(e) => handleSubmit(e)}>
+        <form className="flex flex-col px-[20px] md:px-0 w-[100%] md:w-[65%]" onSubmit={(e) => handleSubmit(e)}>
             <div>
                 <input type="text" id="identifiant" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" onChange={(e) => setTitle(e.target.value)} />
             </div>
