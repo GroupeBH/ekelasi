@@ -30,8 +30,6 @@ function AllNews() {
             {
                 currentAdmin ? <HeaderAdmin />  : <div className='pt-[60px]'><Nav /></div>
             }
-            <div>
-            </div>
             <h2 className="text-center pb-7 pt-20 text-[25px] md:text-[27px] font-bold" >Nouvelles</h2>
             <div className="h-auto grid grid-cols-3 gap-5 " data-aos="fade-up" data-aos-delay="100">
                 {news.map((news) => (
