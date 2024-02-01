@@ -49,7 +49,7 @@ function AllNews() {
                     <h3 id="news" className="font-bold text-[17px] pb-3 underline text-[rgba(0,0,0,0.76)]">
                         {news.title}
                     </h3>
-                    <div  className="text-[15px] font-light">{news.description}</div>
+                    <div  className="text-[15px] font-light max-w-[300px] overflow-hidden whitespace-nowrap text-ellipsis">{news.description}</div>
                     </div>
                 </div>
                 ))}
