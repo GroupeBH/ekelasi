@@ -1,7 +1,8 @@
+import Detail from "@/app/components/news/Detail";
 import React from "react";
 
 function page() {
-  return <div>page</div>;
+  return <Detail />
 }
 
 export default page;

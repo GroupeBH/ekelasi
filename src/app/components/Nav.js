@@ -3,13 +3,15 @@ import {useEffect, useState} from 'react'
 import logo from "../assets/logo e-kelasi.png"
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
+import imgFooter1 from "../assets/logo-drk-1.png";
+import imgFooter2 from "../assets/logo-drk-footer.png";
 
 const navTags = [
     {name: "Accueil", link: "home"},
     {name: "Nouvelles", link: "news"},
     {name: "Possibilités", link: "features"},
     {name: "Ecosystème", link: "eco"},
-    {name: "Ils travaillent avec nous", link: "partner"},
+    {name: "Collaborateurs", link: "partner"},
     {name: "Contacts", link: "contact"},
 ]
 export default function Nav({scrolltoHash}){
@@ -27,12 +29,28 @@ export default function Nav({scrolltoHash}){
           fluid={true}
           rounded={true}
         >
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <Image
               src={logo}
               alt=""
-              className="mr-3 h-6 md:w-[10vw] w-[30vw] sm:h-9 object-cover"
+              className="w-[100px] object-cover mr-3"
             />
+            <div className="flex flex-col md:flex-row gap-6 pb-10 md:pb-0">
+              <div className="w-[60px] md:w-[100px] mb-10 md:mb-0 md:h-[50px] text-white">
+                <Image
+                  src={imgFooter1}
+                  alt=""
+                  className="w-[60px] md:w-[100px] md:h-[50px] object-contain"
+                />
+              </div>
+              <div className="md:w-[150px] md:h-[50px]">
+                <Image
+                  src={imgFooter2}
+                  alt=""
+                  className="md:w-[150px] md:h-[50px] object-contain"
+                />
+              </div>
+            </div>
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse >
