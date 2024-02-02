@@ -30,7 +30,7 @@ export const ecosystems = [
     {
         id:4,
         title: "Kelasi.Vidéo",
-        description: "Pour donner des cours à distance directement à ElZhur, même via Zoom",
+        description: "Pour donner des cours à distance directement à E-Kelasi, même via Zoom",
         image: SITEWEB
     },
     {
@@ -42,7 +42,7 @@ export const ecosystems = [
     {
         id:6,
         title: "Sites Web typiques des organisations éducatives",
-        description: "Avoir un site Web bien conçu avec affichage automatique des informations d'ElZhur",
+        description: "Avoir un site Web bien conçu avec affichage automatique des informations d'E-Kelasi",
         image: VIDEO
     },
     {

@@ -7,7 +7,6 @@ import FeaturesSection from "./components/FeaturesSection";
 import Nav from "./components/Nav";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
-import { useState } from "react";
 // ..
 
 export default function Home() {
