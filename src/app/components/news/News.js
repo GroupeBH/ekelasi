@@ -14,8 +14,8 @@ function AllNews() {
     const router = useRouter()
 
     const [news, setNews] = useState([])
-    const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
-
+    const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
+    
 
       const getNews = async() => {
         const data = await axios.get("http://localhost:8002/api/get-news/")

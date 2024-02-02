@@ -15,7 +15,7 @@ function Detail() {
     const params = useParams()
     const [news, setNews] = useState(null)
 
-    const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+    const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
 
     useEffect(() => {
     const getNews = async() => {

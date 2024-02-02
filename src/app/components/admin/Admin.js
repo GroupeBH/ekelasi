@@ -23,7 +23,7 @@ function Admin() {
   const [loader, setLoader] = useState(false)
 
 
-  const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'))
+  const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
   useEffect(() => {
     !currentAdmin && router.push('/auth')
   },[router, currentAdmin]);
