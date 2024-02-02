@@ -33,10 +33,10 @@ export default function Nav({scrolltoHash}){
             <Image
               src={logo}
               alt=""
-              className="w-[100px] object-cover mr-3"
+              className="w-[100px] object-cover mr-5 md:mr-20 md:order-1"
             />
-            <div className=" hidden md:flex md:flex-row gap-6 pb-10 md:pb-0">
-              <div className="w-[70px] md:w-[100px] mb-10 md:mb-0 md:h-[50px] text-white">
+            <div className=" hidden order-2 md:order-3 md:flex md:flex-row gap-6 pb-10 md:pb-0">
+              <div className="w-[70px] flex md:hidde md:w-[100px] mb-10 md:mb-0 md:h-[50px] text-white">
                 <Image
                   src={imgFooter1}
                   alt=""
@@ -51,22 +51,6 @@ export default function Nav({scrolltoHash}){
                 />
               </div>
             </div>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className='flex flex-col md:hidden'>
-              {navTags.map((i, index) => {
-                return (
-                  <div key={index}>
-                    <div
-                      className={`cursor-pointer text-[16px] px-1 md:bg-white  py-1 md:px-0 md:py-0  ${active === i.name ? 'bg-[#3b71b9] text-white md:bg-white  md:text-[#3b71b9]' : ''}`}
-                      onClick={() => handleOnClik(i)}
-                    >
-                      {i.name}
-                    </div>
-                  </div>
-                )
-              })}
-            </Navbar.Collapse>
             <div className=" flex flex-row md:hidden gap-3 pt-2 pb-1 md:pb-0">
               <div className="w-[70px] md:w-[100px] mb-0 md:mb-0 md:h-[50px] text-white">
                 <Image
@@ -83,6 +67,23 @@ export default function Nav({scrolltoHash}){
                 />
               </div>
             </div>
+          </Navbar.Brand>
+          <Navbar.Toggle className='' />
+          <Navbar.Collapse className='md:order-2'>
+              {navTags.map((i, index) => {
+                return (
+                  <div key={index}>
+                    <div
+                      className={`cursor-pointer text-[16px] px-1 md:bg-white  py-1 md:px-0 md:py-0  ${active === i.name ? 'bg-[#3b71b9] text-white md:bg-white  md:text-[#3b71b9]' : ''}`}
+                      onClick={() => handleOnClik(i)}
+                    >
+                      {i.name}
+                    </div>
+                  </div>
+                )
+              })}
+            </Navbar.Collapse>
+            
         </Navbar>
 
       </div>
