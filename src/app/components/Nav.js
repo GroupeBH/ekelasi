@@ -33,27 +33,43 @@ export default function Nav({scrolltoHash}){
             <Image
               src={logo}
               alt=""
-              className="w-[100px] object-cover mr-3"
+              className="w-[100px] object-cover mr-5 md:mr-20 md:order-1"
             />
-            <div className="flex flex-col md:flex-row gap-6 pb-10 md:pb-0">
-              <div className="w-[60px] md:w-[100px] mb-10 md:mb-0 md:h-[50px] text-white">
+            <div className=" hidden order-2 md:order-3 md:flex md:flex-row gap-6 pb-10 md:pb-0">
+              <div className="w-[70px] flex md:hidde md:w-[100px] mb-10 md:mb-0 md:h-[50px] text-white">
                 <Image
                   src={imgFooter1}
                   alt=""
-                  className="w-[60px] md:w-[100px] md:h-[50px] object-contain"
+                  className="w-[70px] md:w-[100px] md:h-[50px] object-contain"
                 />
               </div>
-              <div className="md:w-[150px] md:h-[50px]">
+              <div className="w-[100px] md:w-[150px] md:h-[50px]">
                 <Image
                   src={imgFooter2}
                   alt=""
-                  className="md:w-[150px] md:h-[50px] object-contain"
+                  className="W-[100px] md:w-[150px] md:h-[50px] object-contain"
+                />
+              </div>
+            </div>
+            <div className=" flex flex-row md:hidden gap-3 pt-2 pb-1 md:pb-0">
+              <div className="w-[70px] md:w-[100px] mb-0 md:mb-0 md:h-[50px] text-white">
+                <Image
+                  src={imgFooter1}
+                  alt=""
+                  className="w-[70px] md:w-[100px] md:h-[50px] object-contain"
+                />
+              </div>
+              <div className="w-[100px] md:w-[150px] md:h-[50px]">
+                <Image
+                  src={imgFooter2}
+                  alt=""
+                  className="W-[100px] md:w-[150px] md:h-[50px] object-contain"
                 />
               </div>
             </div>
           </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse >
+          <Navbar.Toggle className='' />
+          <Navbar.Collapse className='md:order-2'>
               {navTags.map((i, index) => {
                 return (
                   <div key={index}>
@@ -67,7 +83,7 @@ export default function Nav({scrolltoHash}){
                 )
               })}
             </Navbar.Collapse>
-          
+            
         </Navbar>
 
       </div>
