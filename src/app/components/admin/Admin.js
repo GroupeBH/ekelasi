@@ -67,7 +67,7 @@ function Admin() {
     }
 
     if(title && description && image) {
-      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
+      const news = await axios.post("https://ekelasi-p59w.onrender.com/api/add-news", { user: currentAdmin._id, title, description, image })
       console.log("news : ", news)
       try{
         if(news.data.message === "success") {
