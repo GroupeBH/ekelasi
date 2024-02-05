@@ -19,7 +19,7 @@ function Detail() {
 
     useEffect(() => {
     const getNews = async() => {
-        const data = await axios.get(`http://localhost:8002/api/get-news/${params?.id}`)
+        const data = await axios.get(`https://ekelasi-p59w.onrender.com/api/get-news/${params.id}`)
         console.log("news : ", data.data.news)
         setNews(data.data.news)
         }
