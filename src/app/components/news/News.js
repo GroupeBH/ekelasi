@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import Image from 'next/image'
@@ -11,7 +11,8 @@ import { FiEdit3 } from "react-icons/fi";
 
 function AllNews() {
 
-    const router = useRouter()
+    const router = useRouter();
+    
 
     const [news, setNews] = useState([])
     const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
@@ -50,13 +51,13 @@ function AllNews() {
                             </h3>
                             <div  className="text-[15px] font-light max-w-[300px] overflow-hidden whitespace-nowrap text-ellipsis">{news.description}</div>
                             <div className='text-end text-[14px] font-medium italic pt-[25px] '>
-                                <Moment date={news?.createdAt} format="DD-MM-YYYY HH:mm" />
+                                <Moment date={news?.createdAt} format="DD-MM-YYYY" />
                             </div>
                         </div>
                     </div>
-                    {
+                    {/* {
                         currentAdmin && <div onClick={() => router.push(`edit/${news._id}`)} className='flex text-white items-center text-[15px] gap-1 cursor-pointer bg-[#3b71b9] ml-7 px-7 py-1 rounded-[10px] w-[113px]'>Modifier<FiEdit3 /></div>
-                    }
+                    } */}
                 </div>
 
                 ))}
