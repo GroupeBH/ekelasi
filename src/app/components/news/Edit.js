@@ -73,14 +73,7 @@ function Edit() {
     setSuccessPublish(false)
     setLoader(true)
 
-
-
-    console.log("urlImage : ", urlImage)
-    console.log("title : ", title)
-
     let data = { user: currentAdmin._id, title, description }
-
-    console.log("data : ", data)
 
     let image = null
 
@@ -98,7 +91,7 @@ function Edit() {
   
 
     if(title && description && (photo || urlImage)) {
-      const news = await axios.patch(`http://localhost:8002/api/update-news/${params.id}`, data)
+      const news = await axios.patch(`https://ekelasi-p59w.onrender.com/api/update-news/${params.id}`, data)
       console.log("news : ", news)
       try{
         if(news.data.message === "success") {

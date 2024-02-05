@@ -44,7 +44,7 @@ function News() {
                 {news?.date}
               </div>
               <div className="py-4">
-                <Image src={news?.image} width={20} height={20} alt="" className=" w-[100%] h-[200px] object-cover rounded-[8px] " />
+                <Image src={news?.image ? news?.image : null} width={20} height={20} alt="" className=" w-[100%] h-[200px] object-cover rounded-[8px] " />
               </div>
               <h3 id="news" className="font-bold text-[20px] pb-3 underline text-[rgba(0,0,0,0.76)]">
                 {news?.title}

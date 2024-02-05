@@ -19,7 +19,7 @@ function AllNews() {
     
 
       const getNews = async() => {
-        const data = await axios.get("http://localhost:8002/api/get-news/")
+        const data = await axios.get("https://ekelasi-p59w.onrender.com/api/get-news")
         console.log("news : ", data.data.news.reverse())
         setNews(data.data.news)
       }
