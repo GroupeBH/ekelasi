@@ -7,12 +7,18 @@ import logo from "../../assets/logo e-kelasi.png"
 import axios from "axios"
 import Link from 'next/link';
 import { cloudinary } from '@/app/services/cloudinary';
+import { useParams } from 'next/navigation'
 
 
 
 
-function Admin() {
+function Edit() {
+
   const router = useRouter()
+  const params = useParams()
+
+  console.log("params : ", params)
+
 
   const [title, setTitle] = useState(null)
   const [description, setDescription] = useState(null)
@@ -21,12 +27,26 @@ function Admin() {
   const [successPublish, setSuccessPublish] = useState(false)
   const [photo, setPhoto] = useState(null)
   const [loader, setLoader] = useState(false)
+  const [news, setNews] = useState(null)
+
+  
 
 
   const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
   useEffect(() => {
     !currentAdmin && router.push('/auth')
   },[router, currentAdmin]);
+
+  useEffect(() => {
+    const getNews = async() => {
+        const data = await axios.get(`http://localhost:8002/api/get-news/${params?.id}`)
+        console.log("news ::: ", data.data.news)
+        setNews(data.data.news)
+        }
+        getNews()
+    },[params?.id])
+
+    console.log("news ext : ", news);
 
   useEffect(() => {
     setTimeout(() => {
@@ -67,7 +87,7 @@ function Admin() {
     }
 
     if(title && description && image) {
-      const news = await axios.post("https://ekelasi-p59w.onrender.com/api/add-news", { user: currentAdmin._id, title, description, image })
+      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
       console.log("news : ", news)
       try{
         if(news.data.message === "success") {
@@ -135,4 +155,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Edit
