@@ -55,9 +55,9 @@ function AllNews() {
                             </div>
                         </div>
                     </div>
-                    {/* {
+                    {
                         currentAdmin && <div onClick={() => router.push(`edit/${news._id}`)} className='flex text-white items-center text-[15px] gap-1 cursor-pointer bg-[#3b71b9] ml-7 px-7 py-1 rounded-[10px] w-[113px]'>Modifier<FiEdit3 /></div>
-                    } */}
+                    }
                 </div>
 
                 ))}
