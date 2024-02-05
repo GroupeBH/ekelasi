@@ -103,6 +103,15 @@ function Edit() {
     }
   }
 
+  useEffect(() => {
+    const getNews = async() => {
+        const data = await axios.get(`https://ekelasi-p59w.onrender.com/api/get-news/${params.id}`)
+        console.log("news : ", data.data.news)
+        setNews(data.data.news)
+        }
+        getNews()
+    },[params?.id])
+
   return (
     <div className='flex flex-col md:flex-row'>
       <div className=' flex flex-col  items-center md:justify-center md:w-[30%] md:h-[100vh]'>
