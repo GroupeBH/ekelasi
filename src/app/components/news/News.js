@@ -19,7 +19,7 @@ function AllNews() {
     
 
       const getNews = async() => {
-        const data = await axios.get("http://localhost:8002/api/get-news/")
+        const data = await axios.get("https://ekelasi-p59w.onrender.com/api/get-news")
         console.log("news : ", data.data.news.reverse())
         setNews(data.data.news)
       }
@@ -44,7 +44,7 @@ function AllNews() {
                                 {news.date}
                             </div>
                             <div className="py-4">
-                                <Image src={news?.image} width={100} height={100} alt="" className="w-[100%] h-[250px] object-cover rounded-[8px] " />
+                                <img src={news?.image} width={100} height={100} alt="" className="w-[100%] h-[250px] object-cover rounded-[8px] " />
                             </div>
                             <h3 id="news" className="font-bold text-[17px] pb-3 underline text-[rgba(0,0,0,0.76)]">
                                 {news.title}
@@ -55,9 +55,9 @@ function AllNews() {
                             </div>
                         </div>
                     </div>
-                    {/* {
+                    {
                         currentAdmin && <div onClick={() => router.push(`edit/${news._id}`)} className='flex text-white items-center text-[15px] gap-1 cursor-pointer bg-[#3b71b9] ml-7 px-7 py-1 rounded-[10px] w-[113px]'>Modifier<FiEdit3 /></div>
-                    } */}
+                    }
                 </div>
 
                 ))}
