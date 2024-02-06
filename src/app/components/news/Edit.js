@@ -17,19 +17,16 @@ function Edit() {
   const router = useRouter()
   const params = useParams()
 
-  console.log("params : ", params)
-
-
   const [title, setTitle] = useState(null)
   const [description, setDescription] = useState(null)
   const [errTilte, setErrTitle] = useState(null)
   const [errDescription, setErrDescription] = useState(null)
   const [successPublish, setSuccessPublish] = useState(false)
   const [photo, setPhoto] = useState(null)
+  const [urlImage, setUrlImage] = useState(null)
   const [loader, setLoader] = useState(false)
   const [news, setNews] = useState(null)
-
-  
+  const [fileURL, setFileURL] = useState(null)
 
 
   const currentAdmin = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('currentAdmin')) : null;
@@ -38,26 +35,29 @@ function Edit() {
   },[router, currentAdmin]);
 
   useEffect(() => {
-    const getNews = async() => {
-        const data = await axios.get(`http://localhost:8002/api/get-news/${params?.id}`)
-        console.log("news ::: ", data.data.news)
-        setNews(data.data.news)
-        }
-        getNews()
-    },[params?.id])
-
-    console.log("news ext : ", news);
-
-  useEffect(() => {
     setTimeout(() => {
       setSuccessPublish(false)
     },1000)
   },[])
 
   const selectFilesHandler = (e) => {
-    console.log("target image : ", e.target.files[0])
     setPhoto(e.target.files[0])
+    setFileURL(URL.createObjectURL(e.target.files[0]));
   }
+
+  useEffect(() => {
+    const getNews = async() => {
+        const data = await axios.get(`https://ekelasi-p59w.onrender.com/api/get-news/${params.id}`)
+        setNews(data.data.news)
+        setUrlImage(data?.data?.news?.image)
+        }
+        getNews()
+    },[params?.id])
+
+    useEffect(() => {
+      setDescription(news?.description)
+      setTitle(news?.title )
+    }, [news])
 
   //Use cloudinary
   let formData = new FormData()
@@ -68,10 +68,12 @@ function Edit() {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    !title ? setErrTitle('get title') : setErrTitle(null)
-    !description ? setErrDescription('get description') : setErrDescription(null)
+    !title ? setErrTitle('Entrer le titre') : setErrTitle(null)
+    !description ? setErrDescription('Entre la description') : setErrDescription(null)
     setSuccessPublish(false)
     setLoader(true)
+
+    let data = { user: currentAdmin._id, title, description }
 
     let image = null
 
@@ -79,15 +81,17 @@ function Edit() {
       await cloudinary(formData)
         .then((res) => {
           image = res.data.secure_url
-          console.log("res.data.secure_url : ", res.data.secure_url)
         })
         .catch((err) => {
           console.log(err)
         })
     }
 
-    if(title && description && image) {
-      const news = await axios.post("http://localhost:8002/api/add-news", { user: currentAdmin._id, title, description, image })
+    image ?  data.image = image : data.image = urlImage
+  
+
+    if(title && description && (photo || urlImage)) {
+      const news = await axios.patch(`https://ekelasi-p59w.onrender.com/api/update-news/${params.id}`, data)
       console.log("news : ", news)
       try{
         if(news.data.message === "success") {
@@ -108,7 +112,7 @@ function Edit() {
       <div className=' flex flex-col  items-center md:justify-center md:w-[30%] md:h-[100vh]'>
           <div>
               <Link href={"/"}>
-                  <Image alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
+                  <img alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
               </Link>
           </div>
           <div className='px-[20px] pt-4 pb-2 text-center text-[18px] font-light md:pt-0 md:pb-0 md:py-0 md:px-4'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
@@ -123,19 +127,26 @@ function Edit() {
       </div>
       <div className='flex flex-col justify-center items-center border-[rgba(0,0,0,0.087)] border-l-[1px] h-auto w-[100%]  md:w-[70%] md:h-[100vh]'>
         <div className='pt-5 pb-2 w-[100%] md:pb-0 md:pt-0 md:w-[65%]'>
-          <h2 className='px-[21px] text-20px md:text-[25px] font-bold md:mr-auto md:mb-3'>Formulaire d'annonce</h2>
+          <h2 className='px-[21px] text-20px md:text-[25px] font-bold md:mr-auto md:mb-3'>Formulaire de modification</h2>
         </div>
         <form className="flex flex-col px-[20px] md:px-0 w-[100%] md:w-[65%]" onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <input type="text" id="identifiant" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
             {errTilte && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errTilte}</p>}
             <div className='pt-4'>
-                <textarea rows="5" placeholder='Description' className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" onChange={(e) => setDescription(e.target.value)}></textarea>
+                <textarea rows="5" placeholder='Description' className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
             <div className="pt-5">
               <input onChange={selectFilesHandler} type="file" accept="image/*" className="" />
+              {
+                urlImage && 
+                  <div className='w-[60px] h-[60px] mt-3'>
+                    <img src={fileURL ? fileURL : urlImage} alt='' width={20} height={20} className='w-[60px] h-[60px] object-cover' />
+                  </div>
+              }
             </div>
+            
             {errDescription && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errDescription}</p>}
             <div className="pt-5">
               {
@@ -146,6 +157,7 @@ function Edit() {
               }
             </div>
         </form>
+      
         {
         successPublish && <div className='text-green-600'>Publication reussie avec success</div>
       }
