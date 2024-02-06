@@ -68,8 +68,8 @@ function Edit() {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    !title ? setErrTitle('get title') : setErrTitle(null)
-    !description ? setErrDescription('get description') : setErrDescription(null)
+    !title ? setErrTitle('Entrer le titre') : setErrTitle(null)
+    !description ? setErrDescription('Entre la description') : setErrDescription(null)
     setSuccessPublish(false)
     setLoader(true)
 
@@ -131,7 +131,7 @@ function Edit() {
         </div>
         <form className="flex flex-col px-[20px] md:px-0 w-[100%] md:w-[65%]" onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <input type="text" id="identifiant" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={title} onChange={(e) => setTitle(e.target.title)} />
+                <input type="text" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
             {errTilte && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errTilte}</p>}
             <div className='pt-4'>
