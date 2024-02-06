@@ -36,7 +36,7 @@ function Detail() {
                 { currentAdmin ? <HeaderAdmin /> : <Nav /> }
             </div>
             <div className=''>
-                <div> <Image src={news?.image} width={50} height={50} alt='' className='w-[100%] h-[300px] md:w-[400px] md:h-[400px] object-center object-cover' /> </div>
+                <div> <img src={news?.image} width={50} height={50} alt='' className='w-[100%] h-[300px] md:w-[400px] md:h-[400px] object-center object-cover' /> </div>
                 { currentAdmin && <Link href={`../edit/${news?._id}`} className='flex text-white items-center text-[15px] gap-1 cursor-pointer bg-[#3b71b9] mt-3 px-7 py-1 rounded-[3px] w-[113px]'>Modifier<FiEdit3 /></Link>}
                 <div className='text-[35px] py-6 md:pt-3  md:pb-6 font-bold md:text-[45px]'>{news?.title}</div>
                 <div className='text-[18px]'>{news?.description}</div>

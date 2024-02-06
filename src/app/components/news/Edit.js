@@ -112,7 +112,7 @@ function Edit() {
       <div className=' flex flex-col  items-center md:justify-center md:w-[30%] md:h-[100vh]'>
           <div>
               <Link href={"/"}>
-                  <Image alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
+                  <img alt="" src={logo} className="pt-5 w-[120px] object-cover md:pt-0" />
               </Link>
           </div>
           <div className='px-[20px] pt-4 pb-2 text-center text-[18px] font-light md:pt-0 md:pb-0 md:py-0 md:px-4'>Cet espace est reservé uniquement pour les administrateur E-KELASI.</div>
@@ -131,18 +131,18 @@ function Edit() {
         </div>
         <form className="flex flex-col px-[20px] md:px-0 w-[100%] md:w-[65%]" onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <input type="text" id="identifiant" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={title ? title : ''} onChange={(e) => setTitle(e.target.title)} />
+                <input type="text" id="identifiant" placeholder="Titre" className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={title} onChange={(e) => setTitle(e.target.title)} />
             </div>
             {errTilte && <p className='text-[rgba(206,19,34,0.85)] text-[15px]'>{errTilte}</p>}
             <div className='pt-4'>
-                <textarea rows="5" placeholder='Description' className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={description ? description : ''} onChange={(e) => setDescription(e.target.value)}></textarea>
+                <textarea rows="5" placeholder='Description' className="w-[100%] mt-1 border-[1px] border-[rgba(90,86,86,0.18)] rounded-[4px] outline-none" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
             <div className="pt-5">
               <input onChange={selectFilesHandler} type="file" accept="image/*" className="" />
               {
                 urlImage && 
                   <div className='w-[60px] h-[60px] mt-3'>
-                    <Image src={fileURL ? fileURL : urlImage} alt='' width={20} height={20} className='w-[60px] h-[60px] object-cover' />
+                    <img src={fileURL ? fileURL : urlImage} alt='' width={20} height={20} className='w-[60px] h-[60px] object-cover' />
                   </div>
               }
             </div>
