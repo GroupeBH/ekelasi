@@ -4,9 +4,8 @@ import React, {useEffect, useState} from "react"
 import Image from "next/image"
 import { useParams } from "next/navigation"
 import { Footer } from "flowbite-react"
-import Nav from "../Nav"
 import { sectionData } from "@/app/helper/featuresSectionData"
-import side_image from "../../assets/header.png"
+import Link from "next/link"
 
 export default function Detail() {
     const params = useParams()
@@ -18,12 +17,17 @@ export default function Detail() {
 
     console.log(data?.details)
     return(
-        <div>
-            <div>
-                <Nav />
-            </div>
+        <div>     
             <div className="px-5 md:px-16 mb-5">
-                <div className="flex flex-col md:flex-row items-center justify-between mt-20 bg-slate-300 py-10 px-5 rounded-lg">
+                <div className="py-5">
+                    <Link className="flex gap-2" href="/">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                        </svg>
+                        Accueil
+                    </Link>
+                </div>
+                <div className="flex flex-col md:flex-row items-center justify-between mt- bg-slate-300 py-10 px-5 rounded-lg">
                     <div className="">
                        <Image src={data?.src} className="md:h-50 md:w-[40vw] " />
                     </div>
