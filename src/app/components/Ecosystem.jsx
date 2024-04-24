@@ -10,7 +10,7 @@ function Ecosystem() {
       </h2>
       <div className="text-center md:w-[62%] m-auto text-[16px] font-light md:leading-7">
         {
-          "ElZhur est une variété de services numériques permettant de résoudre divers problèmes. L'intégration des services dans un espace numérique unique crée un écosystème où chaque élément fait partie intégrante et joue un rôle particulier."
+          "Ekelasi est une variété de services numériques permettant de résoudre divers problèmes. L'intégration des services dans un espace numérique unique crée un écosystème où chaque élément fait partie intégrante et joue un rôle particulier."
         }
       </div>
       <div className="grid md:grid-cols-2 gap-9 md:px-10 py-16 ">

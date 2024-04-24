@@ -1,29 +1,9 @@
-import Image from "next/image";
-import side_image from "../assets/header.png"
-import features_families from "../assets/features/features-families__2x.png"
-import features_regions from "../assets/features/features-regions__2x.png"
-import features_schools from "../assets/features/features-schools__2x.png"
-
-const sectionData = [
-    {
-        title: 'Organisations éducatives', 
-        src: features_families, 
-        paragraph: ['Gestion opérationnelle du processus éducatif', 'Libération de la paperasse', 'Automatisation des tâches courantes', 'Informations complètes sur les activités éducatives', 
-            'Accès sur n’importe quel appareil depuis n’importe où dans le monde']
-    },
-    {
-        title: 'Aux instances dirigeantes', 
-        src: features_regions, 
-        paragraph: ['Surveillance des organisations subordonnées', 'Intégration avec les services et ressources gouvernementaux',
-            'Conformité aux exigences gouvernementales en matière de développement et de mise en œuvre']},
-    {
-        title: 'Pour les étudiants et les parents', 
-        src: features_schools, 
-        paragraph: ['Suivi des progrès et de la fréquentation', 'Contact avec les professeurs',
-            'Notifications et rapports instantanés', 'Calendrier, sujets de cours, devoirs', "Ressources pédagogiques et d'apprentissage en ligne"]}
-]
+import Image from "next/image"
+import {sectionData} from "../helper/featuresSectionData"
+import { useRouter } from 'next/navigation'
 
 export default function FeaturesSection() {
+    const router = useRouter();
     return (
         <div className="flex justify-center flex-col  py-24 bg-[#eeeff3] w-[100%] md:px-16 px-5">
             <div className="flex flex-col w-[100%] gap-2 pb-3 md:pb-0">
@@ -42,15 +22,23 @@ export default function FeaturesSection() {
                                 <ul>
                                     {i.paragraph.map((p, index) => {
                                         return (
-                                            <li key={index}  className="flex items-center space-x-3 rtl:space-x-reverse md:leading-7" >
-                                                <svg className="flex-shrink-0 w-3.5 h-3.5 text-green-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                                                </svg>
-                                                <span className="font-light" >{p}</span>
+                                            <li key={index}  className="" >
+                                               <div className="flex items-center space-x-3 rtl:space-x-reverse md:leading-7">
+                                                    <svg className="flex-shrink-0 w-3.5 h-3.5 text-green-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                                    </svg>
+                                                    <span className="font-light" >{p}</span>
+                                               </div>
                                             </li>
                                         )
                                     })}
                                 </ul>
+                                <button 
+                                  className="border-green-300 border-[1px] p-2 rounded-[0.5rem] text-sm text-green-300 mt-2"
+                                  onClick={() => router.push(`features/${index}`)}
+                                >
+                                    Voir plus
+                                </button>
                             </div>
                         </div>
                     )
