@@ -24,7 +24,7 @@ export default function FeaturesSection() {
                                         return (
                                             <li key={index}  className="" >
                                                <div className="flex items-center space-x-3 rtl:space-x-reverse md:leading-7">
-                                                    <svg className="flex-shrink-0 w-3.5 h-3.5 text-green-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                    <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
                                                     </svg>
                                                     <span className="font-light" >{p}</span>
@@ -34,7 +34,7 @@ export default function FeaturesSection() {
                                     })}
                                 </ul>
                                 <button 
-                                  className="border-green-300 border-[1px] p-2 rounded-[0.5rem] text-sm text-green-300 mt-2"
+                                  className="border-blue-500 border-2 p-2 rounded-[0.5rem] text-sm text-blue-500 mt-2 hover:bg-blue-500 hover:text-white hover:animate-bounce"
                                   onClick={() => router.push(`features/${index}`)}
                                 >
                                     Voir plus
