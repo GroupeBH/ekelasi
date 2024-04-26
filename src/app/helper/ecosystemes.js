@@ -3,7 +3,7 @@ import RESSOUCRE from "../assets/Ressources.png"
 import BIBLIOTHEQUE from "../assets/biblioteque.png"
 import SITEWEB from "../assets/siteweb.png"
 import IMPRESSION from "../assets/Impression.png"
-import VIDEO from "../assets/video.png"
+import EKELASI_VIDEO from "../assets/ekelasiVideo.png"
 import SURVEILLANCE from "../assets/surveillance.png"
 import ECOSYSTEM from "../assets/ecosystem-journal.png"
 
@@ -43,7 +43,7 @@ export const ecosystems = [
         id:6,
         title: "Sites Web typiques des organisations éducatives",
         description: "Avoir un site Web bien conçu avec affichage automatique des informations d'E-Kelasi",
-        image: VIDEO
+        image: EKELASI_VIDEO
     },
     {
         id:7,
